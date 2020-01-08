@@ -1,0 +1,45 @@
+@page "/examples/pwned"
+@inject PwnedPasswordsService service
+
+<div class="container">
+    <p>
+        Short demo showing off features of <a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor\">Blazor</a>. 
+        Main reason I got interested in Blazor is that you can write front-end code without using any JavaScript.
+        This demo utilizes official <a href="https://haveibeenpwned.com/API/v2">haveibeenpwned API</a>. 
+        You can try the code youself, just type in any string in the input field below.
+    </p>
+
+    <div  @oninput="fetch">
+        <input class="form-control" type="password" @bind="pass" @bind:event="oninput" placeholder="Type password" />
+        <div class="form-text" style="font-size: 0.75rem">
+            @if (hash != "")
+            {
+                <p>Password hash: @hash</p>
+            }
+        </div>
+        <div class="form-text">
+            @result
+        </div>
+    </div>
+</div>
+
+@code
+{
+    string pass = "";
+    string hash = "";
+    string result = "";
+    
+    async Task fetch()
+    {
+        if (pass == "" || pass is null)
+        {
+            hash = "";
+            result = "";
+            return;
+        }
+
+        var res = await service.FetchAsync(pass);
+        hash = res.hash;
+        result = res.result;
+    }
+}

@@ -1,0 +1,31 @@
+@using System.Text.RegularExpressions
+
+<div class="row pt-2">
+    <div class="col-md-3">
+        @if (Item.HasDates)
+        {
+            <p>@(getDate(Item.From)) - @(getDate(Item.To)), @Item.Location</p>
+        }
+    </div>
+
+    <div class="col-md-7">
+        @if (isLink(Item.Description))
+        {
+            <a href=@Item.Description>@Item.Title</a>
+        }
+        else
+        {
+            <b>@Item.Title</b>
+            <p>@Item.Description</p>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public Item Item { get; set; }
+
+    string getDate(DateTime dt) => $"{dt:MMM yyyy}";
+
+    bool isLink(string str) => Regex.IsMatch(str, @"^https:\/\/");
+}

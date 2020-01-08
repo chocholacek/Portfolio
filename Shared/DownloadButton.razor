@@ -1,0 +1,12 @@
+<form method="get" action=@Src>
+    <button class="btn btn-primary" type="Download">@Text</button>
+</form>
+
+@code
+{
+    [Parameter]
+    public string Src { get; set; }
+
+    [Parameter]
+    public string Text { get; set; }
+}

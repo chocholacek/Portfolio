@@ -1,0 +1,27 @@
+<div class="pt-5">
+    <h2 class="">@Title</h2>
+
+    @foreach (var skill in Skills.OrderByDescending(s => s.Level))
+    {
+        <b>@skill.Name</b>
+        @if (BarsVisible)
+        {
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style=@($"width: {skill.Level}%") 
+                    aria-valuenow=@skill.Level aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        }
+    }
+</div>
+
+@code
+{
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public IEnumerable<Skill> Skills { get; set; }
+
+    [Parameter]
+    public bool BarsVisible { get; set; } = true;
+}

@@ -1,0 +1,165 @@
+@page "/"
+
+<h1>@name</h1>
+
+<div class="row justify-content-around">
+    <div class="col-md-3">
+        <SkillsView Title="Programming skills" Skills=@programming />
+        <SkillsView Title="Languages" Skills=@languages />
+        <SkillsView Title="Another skills" BarsVisible="false" Skills=@anotherSkills />
+    </div>
+    <div class="row grid-divider" />
+    <div class="col-md-8">
+        <Category Name="Contact" Items=@contact />
+        @* <Category Name="Media" Items=@media /> *@
+        <Category Name="About" Items=@about />
+        <Category Name="Employment History" Items=@employments />
+        <Category Name="Education" Items=@educations />
+    </div>
+</div>
+
+@code
+{
+    string name = "Bc. Marek Chocholáček";
+
+    Item[] contact = new []
+    {
+        new Item
+        {
+            Title = "Email",
+            Description = "chocholacek.marek@gmail.com"
+        },
+        new Item
+        {
+            Title = "Phone",
+            Description = "+421918177262"
+        }
+    };
+
+    Item[] media = new []
+    {
+        new Item
+        {
+            Title = "Github",
+            Description = "https://github.com/chocholacek"
+        },
+        new Item
+        {
+            Title = "Gitlab",
+            Description = "https://gitlab.com/chocholacek"
+        }
+    };
+    
+    Item[] about = new [] 
+    {
+        new Item 
+        { 
+            Description = "During my studies, I experienced working solo and working in a team on many different programming tasks. In my free time, I prefer listening to music, watching movies and looking into some of the topics that are currently on my mind. These topics include physics, astronomy, news related to my preferred programming languages and many more."
+        } 
+    };
+
+    Item[] employments = new []
+    {
+        new Item 
+        {
+            Title = "Undergraduate Teaching Assistant at Masaryk University",
+            Description = "Part-time assistant on basic C++ course (PB161). This assistance included answering student questions on seminars and giving feedback to students on major programming tasks during semester.",
+            From = new DateTime(2018, 6, 1),
+            To = new DateTime(2019, 2, 1),
+            Location = "Brno"
+        },
+        new Item 
+        {
+            Title = "C# Developer",
+            Description = "Part-time C# back-end web developer (ASP.NET)",
+            From = new DateTime(2018, 5, 1),
+            To = new DateTime(2018, 12, 1),
+            Location = "Brno"
+        }
+    };
+
+    Item[] educations = new []
+    {
+        new Item 
+        {
+            Title = "Masaryk University, Faculty of Informatics",
+            Description = "Bachelor's degree, Applied Informatics",
+            From = new DateTime(2015, 7, 1),
+            To = new DateTime(2019, 7, 1),
+            Location = "Brno"
+        }
+    };
+
+    Skill[] programming = new []
+    {
+        new Skill 
+        { 
+            Name = "C#",
+            Level = 80
+        },
+        new Skill 
+        { 
+            Name = ".NET Core",
+            Level = 80
+        },
+        new Skill 
+        { 
+            Name = "OOP principles",
+            Level = 80
+        },
+        new Skill 
+        { 
+            Name = "C++",
+            Level = 75
+        },
+        new Skill 
+        { 
+            Name = "Git",
+            Level = 50
+        },
+        new Skill 
+        { 
+            Name = "SQL",
+            Level = 60
+        },
+        new Skill 
+        { 
+            Name = "Linux",
+            Level = 60
+        },
+        new Skill 
+        { 
+            Name = "Python",
+            Level = 25
+        },
+        new Skill 
+        { 
+            Name = "JavaScript",
+            Level = 20
+        }
+    };
+
+    Skill[] languages = new []
+    {
+        new Skill 
+        { 
+            Name = "Slovak",
+            Level = 100
+        },
+        new Skill 
+        { 
+            Name = "English",
+            Level = 80
+        }
+    };
+
+    Skill[] anotherSkills = new []
+    {
+        new Skill 
+        { 
+            Name = "Driver's license, category B2",
+            Level = 100
+        }
+    };
+
+}

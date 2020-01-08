@@ -1,0 +1,16 @@
+<div class="pt-5">
+    <h2 class="">@Name</h2>
+
+    @foreach (var item in Items)
+    {
+        <ItemView Item=@item />
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string Name { get; set; }
+
+    [Parameter]
+    public IEnumerable<Item> Items { get; set; }
+}

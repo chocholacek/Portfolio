@@ -1,0 +1,37 @@
+@page "/examples/bcthesis"
+
+<div class="row">
+    <div class="col-sm-5 col-12">
+        <p>
+            Priority queues are, in practice, a widely used and well-known term
+            in computer science community. To this day, many theoretical variants
+            supporting different sets of operations with different guarantees have
+            been proposed. In my thesis, I focus only on heaps supporting these
+            operations:
+        </p>
+        <ul>
+            <li>Empty</li>
+            <li>Min</li>
+            <li>Empty</li>
+            <li>Insert</li>
+            <li>ExtractMin</li>
+            <li>DecreaseKey</li>
+        </ul>
+        <p>
+            Each heap is implemented in C++ and all of the implementations are public and can be found <a href="https://github.com/chocholacek/Priority-queues">here</a>.
+        </p>
+.
+        <DownloadButton Src=@pdf Text="Download thesis" />
+    </div>
+    <div class="col-7 d-none d-sm-block">
+        <div class="d-flex" style="height: 50rem">
+            <embed src=@($"{pdf}#view=FitH") style="width: 100%;height: 100%;" />
+        </div>
+    </div>
+</div>
+
+@code
+{
+    string pdf = "data/chocholacek_thesis.pdf";
+}
+
