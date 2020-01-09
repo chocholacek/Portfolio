@@ -1,0 +1,12 @@
+<a href=@Href>
+    <img src="@ImageSrc" alt="Responsive image" class="rounded img-thumbnail">
+</a>
+
+@code
+{
+    [Parameter]
+    public string Href { get; set; }
+
+    [Parameter]
+    public string ImageSrc { get; set; }
+}
