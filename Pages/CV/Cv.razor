@@ -3,19 +3,17 @@
 <h1>@name</h1>
 
 <div class="row justify-content-around">
-    <div class="col-md-3">
-        <SkillsView Title="Programming skills" Skills=@programming />
-        <SkillsView Title="Languages" Skills=@languages />
-        <SkillsView Title="Another skills" BarsVisible="false" Skills=@anotherSkills />
-    </div>
-    <div class="row grid-divider" />
     <div class="col-md-8">
         <Category Name="Contact" Items=@contact />
-        @* <Category Name="Media" Items=@media /> *@
         <Category Name="About" Items=@about />
         <Category Name="Employment History" Items=@employments />
         <Category Name="Education" Items=@educations />
     </div>
+    <div class="col-md-3">
+        <SkillsView Title="Programming skills" Skills=@programming />
+        <SkillsView Title="Languages" Skills=@languages />
+        <SkillsView Title="Another skills" BarsVisible="false" Skills=@anotherSkills />
+    </div>  
 </div>
 
 @code

@@ -1,0 +1,33 @@
+<div class="row pt-2">
+    <div>
+        <h5 class="">
+            <b>@CourseCode</b>: @CourseName
+        </h5>
+        <p class="">
+            @ChildContent
+        </p>
+    </div>
+    <div class="text-center">
+        <a href="@Href">
+            <button class="btn btn-primary">Inspect source code</button>
+        </a>
+    </div>
+</div>
+<hr />
+
+@code
+{
+    [Parameter]
+    public string CourseCode { get; set; }
+
+    [Parameter]
+    public string CourseName{ get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public string Href { get; set; }
+}
+
+
