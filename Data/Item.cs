@@ -11,7 +11,8 @@ namespace Portfolio.Data
         public string Title { get; set; }
 
         public bool HasDates { get; private set; }
- 
+
+        public bool Current { get; set; }
 
         public DateTime From 
         { 

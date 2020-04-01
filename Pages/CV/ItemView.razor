@@ -4,7 +4,7 @@
     <div class="col-md-3">
         @if (Item.HasDates)
         {
-            <p>@(getDate(Item.From)) - @(getDate(Item.To)), @Item.Location</p>
+            <p>@(getDates()), @Item.Location</p>
         }
     </div>
 
@@ -25,7 +25,14 @@
     [Parameter]
     public Item Item { get; set; }
 
-    string getDate(DateTime dt) => $"{dt:MMM yyyy}";
+    string getDates()
+    {
+        var from = formatDate(Item.From);
+        var to = Item.Current ? "Present" : formatDate(Item.To);
+        return $"{from} - {to}";
+    }
+
+    string formatDate(DateTime dt) => $"{dt:MMM yyyy}";
 
     bool isLink(string str) => Regex.IsMatch(str, @"^https:\/\/");
 }
