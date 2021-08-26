@@ -17,16 +17,15 @@ namespace Portfolio.Services
             using var http = new HttpClient();
             var hash = pass.SHA1Sum();
             var response = await http.GetStreamAsync($"{_api}{hash[..5]}");
-            var count = await getCountAsync(response, hash[5..]);
+            var count = await GetCountAsync(response, hash[5..]);
 
-            return (result: $"{count} matches found", hash);
+            return ($"{count} matches found", hash);
         }
 
-        private Task<int> getCountAsync(Stream response, string match) => Task.Run(() => 
+        private Task<int> GetCountAsync(Stream response, string match) => Task.Run(() => 
         {
             using var reader = new StreamReader(response);
-            string? line;
-            while ((line = reader.ReadLine()) is { })
+            while (reader.ReadLine() is { } line)
             {
                 var splits = line.Split(":");
                 if (splits[0] == match)

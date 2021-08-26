@@ -4,9 +4,9 @@ namespace Portfolio.Data
 {
     public class Item
     {
-        private DateTime from;
+        private DateTime _from;
 
-        private DateTime to;
+        private DateTime _to;
 
         public string Title { get; set; }
 
@@ -16,26 +16,26 @@ namespace Portfolio.Data
 
         public DateTime From 
         { 
-            get => from; 
+            get => _from; 
             set 
             {
                 HasDates = true; 
-                from = value;
+                _from = value;
             }
         }
 
         public DateTime To
         {
-            get => to;
+            get => _to;
             set
             {
                 HasDates = true;
-                to = value;
+                _to = value;
             }
         }
 
         public string Location { get; set; }
 
-        public string Description { get; set; }
+        public string Description { get; init; }
     }
 }

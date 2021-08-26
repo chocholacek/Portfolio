@@ -20,28 +20,28 @@
 {
     string name = "Bc. Marek Chocholáček";
 
-    Item[] contact = new []
+    Item[] contact = new Item[]
     {
-        new Item
+        new ()
         {
             Title = "Email",
             Description = "chocholacek.marek@gmail.com"
         },
-        new Item
+        new ()
         {
             Title = "Phone",
             Description = "+421918177262"
         }
     };
 
-    Item[] media = new []
+    Item[] media = new Item[]
     {
-        new Item
+        new ()
         {
             Title = "Github",
             Description = "https://github.com/chocholacek"
         },
-        new Item
+        new ()
         {
             Title = "Gitlab",
             Description = "https://gitlab.com/chocholacek"
@@ -56,9 +56,9 @@
         } 
     };
 
-    Item[] employments = new []
+    Item[] employments = new Item[]
     {
-        new Item 
+        new () 
         {
             Title = "Undergraduate Teaching Assistant at Masaryk University",
             Description = "Part-time assistant on basic C++ course (PB161). This assistance included answering student questions on seminars and giving feedback to students on major programming tasks during semester.",
@@ -66,7 +66,7 @@
             To = new DateTime(2019, 2, 1),
             Location = "Brno"
         },
-        new Item 
+        new () 
         {
             Title = "C# Developer at Bluesoft s.r.o.",
             Description = "Part-time C# back-end web developer (ASP.NET)",
@@ -74,7 +74,7 @@
             To = new DateTime(2018, 12, 1),
             Location = "Brno"
         },
-        new Item 
+        new () 
         {
             Title = "Software engineer at NetSuite",
             Description = "Full-time software developer in infrastructure team.",
@@ -97,76 +97,30 @@
         }
     };
 
-    Skill[] programming = new []
+    Skill[] programming = new Skill[]
     {
-        new Skill 
-        { 
-            Name = "C#",
-            Level = 80
-        },
-        new Skill 
-        { 
-            Name = ".NET Core",
-            Level = 80
-        },
-        new Skill 
-        { 
-            Name = "OOP principles",
-            Level = 80
-        },
-        new Skill 
-        { 
-            Name = "C++",
-            Level = 75
-        },
-        new Skill 
-        { 
-            Name = "Git",
-            Level = 50
-        },
-        new Skill 
-        { 
-            Name = "SQL",
-            Level = 60
-        },
-        new Skill 
-        { 
-            Name = "Linux",
-            Level = 60
-        },
-        new Skill 
-        { 
-            Name = "Python",
-            Level = 25
-        },
-        new Skill 
-        { 
-            Name = "JavaScript",
-            Level = 20
-        }
+        new ("C#", 80),
+        new (".NET Core", 80),
+        new ("OOP principles", 80),
+        new ("C++", 75),
+        new ("Git", 50),
+        new ("SQL", 60),
+        new ("Linux", 60),
+        new ("Python", 25),
+        new ("JavaScript", 20),
+        new ("Docker", 40),
+        new ("F#", 55),
     };
 
-    Skill[] languages = new []
+    Skill[] languages = new Skill[]
     {
-        new Skill 
-        { 
-            Name = "Slovak",
-            Level = 100
-        },
-        new Skill 
-        { 
-            Name = "English",
-            Level = 80
-        }
+        new ("Slovak", 100),
+        new ("English", 80)
     };
 
-    Skill[] anotherSkills = new []
+    Skill[] anotherSkills = new Skill[]
     {
-        new Skill 
-        { 
-            Name = "Driver's license, category B2",
-            Level = 100
-        }
+        new ("Driver's license, category B2", 100)
     };
 
 }

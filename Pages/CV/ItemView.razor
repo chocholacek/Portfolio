@@ -25,6 +25,8 @@
     [Parameter]
     public Item Item { get; set; }
 
+    Regex link = new (@"^https:\/\/");
+
     string getDates()
     {
         var from = formatDate(Item.From);
@@ -34,5 +36,5 @@
 
     string formatDate(DateTime dt) => $"{dt:MMM yyyy}";
 
-    bool isLink(string str) => Regex.IsMatch(str, @"^https:\/\/");
+    bool isLink(string str) => link.IsMatch(str);
 }
